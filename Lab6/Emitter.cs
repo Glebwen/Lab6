@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -17,8 +18,13 @@ namespace Lab6
         public float GravitationX = 0;
         public float GravitationY = 1;
 
+
+
         public List<ImpactPoints> impactPoints = new List<ImpactPoints>();
         public List<Fire> fires = new List<Fire>();
+
+        public List<float> XCors = new List<float>{350f, 450f, 350f, 450f, 350f, 450f};
+        public List<float> YCors = new List<float>{110f, 110f, 185f, 185f, 265f, 265f };
 
         public int ParticlesCount = 500;
 
@@ -114,17 +120,22 @@ namespace Lab6
 
             foreach (var fire in fires)
             {
-                if (fire.life < 0)
+                if (fire.life <= 0)
                 {
                     fire.life = 100;
-                    fire.X = rand.Next(300);
-                    fire.Y = rand.Next(300);
+                    int windownum = rand.Next(5);
+                    fire.X = XCors[windownum];
+                    fire.Y = YCors[windownum];
                 }
             }
         }
 
         public void Render(Graphics g)
         {
+            foreach (var point in fires)
+            {
+                point.Render(g);
+            }
             foreach (var particle in particles)
             {
                 particle.Draw(g);
@@ -136,10 +147,7 @@ namespace Lab6
             }
 
 
-            foreach (var point in fires)
-            {
-                point.Render(g);
-            }
+
         }
     }
 
@@ -150,11 +158,11 @@ namespace Lab6
         public override void ResetParticle(Particle particle)
         {
             base.ResetParticle(particle); 
-            particle.X = Particle.rand.Next(Width); 
-            particle.Y = 0;
+            particle.X = X + Particle.rand.Next(Width) - Width/2; 
+            particle.Y = Y;
 
             particle.SpeedY = 1; 
-            particle.SpeedX = Particle.rand.Next(-2, 2);
+            particle.SpeedX = Particle.rand.Next(-1, 1);
         }
     }
 }

@@ -53,7 +53,7 @@ namespace Lab6
             g.FillRectangle(
                 new SolidBrush(Color.Red),
                 X - size.Width / 2, // так как я выравнивал текст по центру то подложка должна быть центрирована относительно X,Y
-                Y - size.Height / 2,
+                Y + 20 - size.Height / 2,
                 size.Width,
                 size.Height
             );
@@ -64,7 +64,7 @@ namespace Lab6
                 font,
                 new SolidBrush(Color.White),
                 X,
-                Y,
+                Y+20,
                 stringFormat
             );
         }

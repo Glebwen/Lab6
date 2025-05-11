@@ -52,10 +52,10 @@ namespace Lab6
         public static Color MixColor(Color color1, Color color2, float k)
         {
             return Color.FromArgb(
-                (int)(Math.Max(0, color2.A * k + color1.A * (1 - k))),
-                (int)(Math.Max(0, color2.R * k + color1.R * (1 - k))),
-                (int)(Math.Max(0, color2.G * k + color1.G * (1 - k))),
-                (int)(Math.Max(0, color2.B * k + color1.B * (1 - k)))
+                (int)(Math.Min(255, Math.Max(0, color2.A * k + color1.A * (1 - k)))),
+                (int)(Math.Min(255,  Math.Max(0, color2.R * k + color1.R * (1 - k)))),
+                (int)(Math.Min(255,  Math.Max(0, color2.G * k + color1.G * (1 - k)))),
+                (int)(Math.Min(255,  Math.Max(0, color2.B * k + color1.B * (1 - k))))
             );
         }
 
