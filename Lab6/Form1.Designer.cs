@@ -59,7 +59,7 @@
             // 
             // tbDirection
             // 
-            this.tbDirection.Location = new System.Drawing.Point(12, 382);
+            this.tbDirection.Location = new System.Drawing.Point(636, 382);
             this.tbDirection.Maximum = 359;
             this.tbDirection.Name = "tbDirection";
             this.tbDirection.Size = new System.Drawing.Size(152, 56);
@@ -68,7 +68,7 @@
             // 
             // tbGraviton1
             // 
-            this.tbGraviton1.Location = new System.Drawing.Point(12, 320);
+            this.tbGraviton1.Location = new System.Drawing.Point(636, 12);
             this.tbGraviton1.Maximum = 100;
             this.tbGraviton1.Name = "tbGraviton1";
             this.tbGraviton1.Size = new System.Drawing.Size(152, 56);
@@ -79,7 +79,7 @@
             // lblDirection
             // 
             this.lblDirection.AutoSize = true;
-            this.lblDirection.Location = new System.Drawing.Point(170, 392);
+            this.lblDirection.Location = new System.Drawing.Point(596, 395);
             this.lblDirection.Name = "lblDirection";
             this.lblDirection.Size = new System.Drawing.Size(14, 16);
             this.lblDirection.TabIndex = 4;
@@ -87,7 +87,7 @@
             // 
             // tbGraviton2
             // 
-            this.tbGraviton2.Location = new System.Drawing.Point(636, 320);
+            this.tbGraviton2.Location = new System.Drawing.Point(636, 74);
             this.tbGraviton2.Maximum = 100;
             this.tbGraviton2.Name = "tbGraviton2";
             this.tbGraviton2.Size = new System.Drawing.Size(152, 56);
