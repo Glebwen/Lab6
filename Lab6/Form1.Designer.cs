@@ -35,6 +35,8 @@
             this.lblDirection = new System.Windows.Forms.Label();
             this.tbForce = new System.Windows.Forms.TrackBar();
             this.forceLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picDisplay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbDirection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbForce)).BeginInit();
@@ -94,11 +96,31 @@
             this.forceLabel.TabIndex = 7;
             this.forceLabel.Text = "10";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(921, 266);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 16);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Сила";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(921, 363);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 16);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Угол";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.forceLabel);
             this.Controls.Add(this.tbForce);
             this.Controls.Add(this.lblDirection);
@@ -122,6 +144,8 @@
         private System.Windows.Forms.Label lblDirection;
         private System.Windows.Forms.TrackBar tbForce;
         private System.Windows.Forms.Label forceLabel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

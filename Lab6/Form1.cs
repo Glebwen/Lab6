@@ -32,10 +32,6 @@ namespace Lab6
             Brons = new Rect(50, 300, 0, 40, 20, Color.Gold);
             Shlang = new Rect(15, 335, -45, 100, 15, Color.Brown);
 
-
-
-
-
             this.emitter = new Emitter
             {
                 Direction = 0,
@@ -51,38 +47,6 @@ namespace Lab6
 
             emitters.Add(this.emitter);
 
-            this.emitter1 = new TopEmitter
-            {
-                Width = 30,
-                GravitationY = -0.25f,
-                ColorFrom = Color.Orange,
-                ColorTo = Color.FromArgb(0, Color.Yellow),
-                ParticlesPerTick = 10,
-                X = picDisplay.Width / 2,
-                Y = picDisplay.Height / 2,
-                LifeMax = 50,
-                ParticlesCount = 10
-            };
-
-            emitters.Add(this.emitter1);
-
-            this.emitter2 = new TopEmitter
-            {
-                Width = 30,
-                GravitationY = -0.25f,
-                ColorFrom = Color.Orange,
-                ColorTo = Color.FromArgb(0, Color.Yellow),
-                ParticlesPerTick = 10,
-                X = picDisplay.Width / 2,
-                Y = picDisplay.Height / 2,
-                LifeMax = 50,
-                ParticlesCount = 10
-            };
-
-            emitters.Add(this.emitter2);
-
-
-
             fire1 = new Fire
             {
                 X = picDisplay.Width / 4,
@@ -96,10 +60,45 @@ namespace Lab6
             {
                 X = picDisplay.Width / 2,
                 Y = picDisplay.Height / 4,
-                life=0,
+                life = 0,
             };
 
             emitter.fires.Add(fire2);
+
+
+            this.emitter1 = new TopEmitter
+            {
+                Width = 30,
+                GravitationY = -0.25f,
+                ColorFrom = Color.Orange,
+                ColorTo = Color.FromArgb(0, Color.Yellow),
+                ParticlesPerTick = 10,
+                X = (int)fire1.X,
+                Y = (int)fire1.Y,
+                LifeMax = 50,
+                ParticlesCount = 10
+            };
+
+            emitters.Add(this.emitter1);
+
+            this.emitter2 = new TopEmitter
+            {
+                Width = 30,
+                GravitationY = -0.25f,
+                ColorFrom = Color.Orange,
+                ColorTo = Color.FromArgb(0, Color.Yellow),
+                ParticlesPerTick = 10,
+                X = (int)fire2.X,
+                Y = (int)fire2.Y,
+                LifeMax = 50,
+                ParticlesCount = 10
+            };
+
+            emitters.Add(this.emitter2);
+
+
+
+            
 
         }
 

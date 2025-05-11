@@ -146,8 +146,6 @@ namespace Lab6
                 point.Render(g);
             }
 
-
-
         }
     }
 
