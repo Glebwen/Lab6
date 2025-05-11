@@ -15,8 +15,10 @@ namespace Lab6
         List<Emitter> emitters = new List<Emitter>();
         Emitter emitter;
 
-        GravityPoint point1;
-        GravityPoint point2;
+        //GravityPoint point1;
+        //GravityPoint point2;
+
+        Fire fire1;
 
         public Form1()
         {
@@ -28,31 +30,39 @@ namespace Lab6
             {
                 Direction = 0,
                 Spreading = 10,
-                SpeedMin = 10,
-                SpeedMax = 10,
+                SpeedMin = 9,
+                SpeedMax = 11,
                 ColorFrom = Color.Gold,
                 ColorTo = Color.FromArgb(0, Color.Red),
                 ParticlesPerTick = 10,
-                X = picDisplay.Width / 2,
-                Y = picDisplay.Height / 2,
+                X = 50,
+                Y = 300,
             };
 
             emitters.Add(this.emitter);
 
-            point1 = new GravityPoint
+            fire1 = new Fire
             {
-                X = picDisplay.Width / 2 + 100,
-                Y = picDisplay.Height / 2,
-            };
-            point2 = new GravityPoint
-            {
-                X = picDisplay.Width / 2 - 100,
-                Y = picDisplay.Height / 2,
+                X = picDisplay.Width / 4,
+                Y = picDisplay.Height / 4,
             };
 
-            // привязываем поля к эмиттеру
-            emitter.impactPoints.Add(point1);
-            emitter.impactPoints.Add(point2);
+            emitter.fires.Add(fire1);
+
+            //point1 = new GravityPoint
+            //{
+            //    X = picDisplay.Width / 2 + 100,
+            //    Y = picDisplay.Height / 2,
+            //};
+            //point2 = new GravityPoint
+            //{
+            //    X = picDisplay.Width / 2 - 100,
+            //    Y = picDisplay.Height / 2,
+            //};
+
+            //// привязываем поля к эмиттеру
+            //emitter.impactPoints.Add(point1);
+            //emitter.impactPoints.Add(point2);
         }
         private void picDisplay_Click(object sender, EventArgs e)
         {
@@ -75,8 +85,8 @@ namespace Lab6
             emitter.MousePositionX = e.X;
             emitter.MousePositionY = e.Y;
 
-            point2.X = e.X;
-            point2.Y = e.Y;
+            //point2.X = e.X;
+            //point2.Y = e.Y;
         }
 
         private void tbDirection_Scroll(object sender, EventArgs e)
@@ -87,12 +97,19 @@ namespace Lab6
 
         private void tbGraviton_Scroll(object sender, EventArgs e)
         {
-            point1.Power = tbGraviton1.Value;
+            //point1.Power = tbGraviton1.Value;
         }
 
         private void tbGraviton2_Scroll(object sender, EventArgs e)
         {
-            point2.Power = tbGraviton2.Value;
+            //point2.Power = tbGraviton2.Value;
+        }
+
+        private void tbForce_Scroll(object sender, EventArgs e)
+        {
+            emitter.SpeedMin = tbForce.Value-1;
+            emitter.SpeedMax = tbForce.Value+1;
+            forceLabel.Text = tbForce.Value.ToString();
         }
     }
 }

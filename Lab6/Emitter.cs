@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace Lab6
 {
@@ -17,6 +18,7 @@ namespace Lab6
         public float GravitationY = 1;
 
         public List<ImpactPoints> impactPoints = new List<ImpactPoints>();
+        public List<Fire> fires = new List<Fire>();
 
         public int ParticlesCount = 500;
 
@@ -35,6 +37,8 @@ namespace Lab6
 
         public Color ColorFrom = Color.White;
         public Color ColorTo = Color.FromArgb(0, Color.Black);
+
+        public static Random rand = new Random();
 
         public virtual void ResetParticle(Particle particle)
         {
@@ -89,6 +93,10 @@ namespace Lab6
                     {
                         point.ImpactParticle(particle);
                     }
+                    foreach (var point in fires)
+                    {
+                        point.ImpactParticle(particle);
+                    }
 
                     particle.SpeedX += GravitationX;
                     particle.SpeedY += GravitationY;
@@ -103,6 +111,16 @@ namespace Lab6
                 ResetParticle(particle);
                 particles.Add(particle);
             }
+
+            foreach (var fire in fires)
+            {
+                if (fire.life < 0)
+                {
+                    fire.life = 100;
+                    fire.X = rand.Next(300);
+                    fire.Y = rand.Next(300);
+                }
+            }
         }
 
         public void Render(Graphics g)
@@ -113,6 +131,12 @@ namespace Lab6
             }
 
             foreach (var point in impactPoints)
+            {
+                point.Render(g);
+            }
+
+
+            foreach (var point in fires)
             {
                 point.Render(g);
             }

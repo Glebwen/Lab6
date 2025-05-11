@@ -35,10 +35,13 @@
             this.tbGraviton1 = new System.Windows.Forms.TrackBar();
             this.lblDirection = new System.Windows.Forms.Label();
             this.tbGraviton2 = new System.Windows.Forms.TrackBar();
+            this.tbForce = new System.Windows.Forms.TrackBar();
+            this.forceLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picDisplay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbDirection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbGraviton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbGraviton2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbForce)).BeginInit();
             this.SuspendLayout();
             // 
             // picDisplay
@@ -95,11 +98,33 @@
             this.tbGraviton2.Value = 100;
             this.tbGraviton2.Scroll += new System.EventHandler(this.tbGraviton2_Scroll);
             // 
+            // tbForce
+            // 
+            this.tbForce.Location = new System.Drawing.Point(636, 320);
+            this.tbForce.Maximum = 30;
+            this.tbForce.Minimum = 10;
+            this.tbForce.Name = "tbForce";
+            this.tbForce.Size = new System.Drawing.Size(152, 56);
+            this.tbForce.TabIndex = 6;
+            this.tbForce.Value = 10;
+            this.tbForce.Scroll += new System.EventHandler(this.tbForce_Scroll);
+            // 
+            // forceLabel
+            // 
+            this.forceLabel.AutoSize = true;
+            this.forceLabel.Location = new System.Drawing.Point(596, 329);
+            this.forceLabel.Name = "forceLabel";
+            this.forceLabel.Size = new System.Drawing.Size(21, 16);
+            this.forceLabel.TabIndex = 7;
+            this.forceLabel.Text = "10";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.forceLabel);
+            this.Controls.Add(this.tbForce);
             this.Controls.Add(this.tbGraviton2);
             this.Controls.Add(this.lblDirection);
             this.Controls.Add(this.tbGraviton1);
@@ -111,6 +136,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbDirection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbGraviton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbGraviton2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbForce)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,6 +150,8 @@
         private System.Windows.Forms.TrackBar tbGraviton1;
         private System.Windows.Forms.Label lblDirection;
         private System.Windows.Forms.TrackBar tbGraviton2;
+        private System.Windows.Forms.TrackBar tbForce;
+        private System.Windows.Forms.Label forceLabel;
     }
 }
 
