@@ -14,11 +14,8 @@ namespace Lab6
     {
         List<Emitter> emitters = new List<Emitter>();
         Emitter emitter;
-
         Emitter emitter1;
         Emitter emitter2;
-
-
         Fire fire1;
         Fire fire2;
         Rect Brons;
@@ -149,25 +146,12 @@ namespace Lab6
         {
             emitter.MousePositionX = e.X;
             emitter.MousePositionY = e.Y;
-
-            //point2.X = e.X;
-            //point2.Y = e.Y;
         }
 
         private void tbDirection_Scroll(object sender, EventArgs e)
         {
             emitter.Direction = tbDirection.Value;
             lblDirection.Text = $"{tbDirection.Value}°";
-        }
-
-        private void tbGraviton_Scroll(object sender, EventArgs e)
-        {
-            //point1.Power = tbGraviton1.Value;
-        }
-
-        private void tbGraviton2_Scroll(object sender, EventArgs e)
-        {
-            //point2.Power = tbGraviton2.Value;
         }
 
         private void tbForce_Scroll(object sender, EventArgs e)
